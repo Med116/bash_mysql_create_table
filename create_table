@@ -1,0 +1,57 @@
+#!/bin/bash
+TABLE=$1
+echo "What column names do you want for the $MODEL table? (enter as space delimited) "
+read colstr
+
+SQL="CREATE TABLE $TABLE (id INT(11) PRIMARY KEY AUTO_INCREMENT, "
+count=0;
+for column in $colstr
+
+do 
+	count=$[count+1]
+done
+
+secondcount=0
+
+for column in $colstr
+
+do 
+	secondcount=$[secondcount+1]
+
+	echo "define $column :ie: INT(11) or VARCHAR(256)"
+	read definition
+	if [ $count == $secondcount ]
+	then
+		SQL+=" $column $definition );"
+	else
+		SQL+=" $column $definition ,"
+	fi
+	
+done
+echo "Do you want to run this query? y/n"
+echo "$SQL
+========================================"
+read yn
+if [ $yn == "y" ]
+then
+	echo "What is your mysql username?
+	"
+	read USERNAME
+
+	echo "What is your mysql database name?
+	"
+	read DATABASENAME
+	echo "Running Query:
+	++++++++++++++++++++++++++++++++++++++++"
+	SQL+="DESCRIBE $TABLE;"
+	echo "Schema for '$TABLE'  will print if your query works after entering ${USERNAME}'s mysql password.
+	
+	"
+	echo "$SQL" | mysql -u ${USERNAME} -D ${DATABASENAME} -p | cat
+	echo "++++++++++++++++++++++++++++++++++++++++"
+
+
+else
+	echo "query not run"
+
+fi
