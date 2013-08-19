@@ -1,6 +1,6 @@
 #!/bin/bash
 TABLE=$1
-echo "What column names do you want for the $MODEL table? (enter as space delimited) "
+echo "What column names do you want for the $TABLE table? (enter as space delimited) "
 read colstr
 
 SQL="CREATE TABLE $TABLE (id INT(11) PRIMARY KEY AUTO_INCREMENT, "
