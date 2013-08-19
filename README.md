@@ -1,14 +1,15 @@
 bash_mysql_create_table
 =======================
-\n
+
 A simple bash script that prompts user to enter column names, then goes through and asks for the column definition, then echos the full SQL \n query, then asks if you want to run it. \n
 
 To Run this shell script, copy this file into where you keep your bash scripts, somewhere like ~/bin will do, thats where I keep mine.\n
-\n
-It takes one argumemt, the table name. \n
-\n
-Here is sample input/outut to craeate a 'members' table with the columns 'first_name', 'last_name', 'email_address': \n
-\n
+
+It takes one argumemt, the table name. 
+
+
+Here is sample input/outut to craeate a 'members' table with the columns 'first_name', 'last_name', 'email_address': 
+
 [shell user]$ create_table members \n
 What column names do you want for the  table? (enter as space delimited)
 first_name last_name email_address
