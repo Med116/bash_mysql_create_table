@@ -10,34 +10,61 @@ It takes one argumemt, the table name.
 
 Here is sample input/outut to craeate a 'members' table with the columns 'first_name', 'last_name', 'email_address': 
 
-[shell user]$ create_table members \n
+[shell user]$ create_table members 
+
 What column names do you want for the  table? (enter as space delimited)
+
 first_name last_name email_address
+
 define first_name :ie: INT(11) or VARCHAR(256)
+
 VARCHAR(50)
+
 define last_name :ie: INT(11) or VARCHAR(256)
+
 varchar(100)
+
 define email_address :ie: INT(11) or VARCHAR(256)
+
 VARCHAR(120)
+
 Do you want to run this query? y/n
+
 CREATE TABLE members (id INT(11) PRIMARY KEY AUTO_INCREMENT,  first_name VARCHAR(50) , last_name varchar(100) , email_address VARCHAR(120) );
+
 ========================================
 y
+
+
 What is your mysql username?
 
-[omitted]
-What is your mysql database name?
 
 [omitted]
+
+What is your mysql database name?
+
+
+[omitted]
+
 Running Query:
+
         ++++++++++++++++++++++++++++++++++++++++
+        
 Schema for 'members'  will print if your query works after entering [omitted]'s mysql password.
 
 
+
 Enter password:
+
 Field   Type    Null    Key     Default Extra
+
 id      int(11) NO      PRI     NULL    auto_increment
+
 first_name      varchar(50)     YES             NULL
+
 last_name       varchar(100)    YES             NULL
+
 email_address   varchar(120)    YES             NULL
+
 ++++++++++++++++++++++++++++++++++++++++
+
